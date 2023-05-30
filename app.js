@@ -3,14 +3,18 @@ require('dotenv').config();
 const express = require('express');
 const hbs = require('hbs');
 
-// require spotify-web-api-node package here:
-const SpotifyWebApi = require('spotify-web-api-node');
+const SpotifyWebApi = require('spotify-web-api-node');// require spotify-web-api-node package here:
 
 const app = express();
 
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
-app.use(express.static(__dirname + '/public'));
+
+// serving static files
+const path = require('path');
+app.use('/public',express.static(path.join(__dirname, 'public')));
+
+hbs.registerPartials(__dirname + "/views/partials");//register partials
 
 // setting the spotify-api goes here:
 const spotifyApi = new SpotifyWebApi({
@@ -41,14 +45,14 @@ app.get('/artist-search', (req, res) => {
     .catch(err => console.log('The error while searching artists occurred: ', err));
 })
 
-app.get('/albums', (req, res) =>{
+app.get('/albums-results', (req, res) =>{
     console.log('req.query',req.query['artist-id'])
     spotifyApi
     .getArtistAlbums(req.query['artist-id'])
     .then(data => {
         const albumsFromApi= data.body.items
         console.log('The received data:', albumsFromApi)
-        res.render('albums', {albumsFromApi:albumsFromApi})
+        res.render('albums-results', {albumsFromApi:albumsFromApi})
     })
     .catch(err => console.log('The error while searching the albums occurred: ', err))
 })

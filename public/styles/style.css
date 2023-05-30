@@ -1,0 +1,101 @@
+body {
+    font-family: 'Mulish', sans-serif;
+}
+
+#background-image img {
+    object-fit:cover;
+    height: 100vh;
+    width: 100%;
+}
+
+#background-search {
+    background-color: rgba(194, 194, 204, 0.5);
+    width: 400px;
+    height: 100px;
+    padding: 2%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -200px;
+}
+
+
+#search-bar {
+    background-color: (194, 194, 204, 0);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#button{
+    color:white;
+    background-color: rgb(182, 53, 53);
+    padding: 3px;
+}
+
+#background-search input {
+    margin: 3%;
+}
+
+#artist{
+    background-color: rgb(188, 187, 187);
+    width: 20%;
+    margin:1%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+}
+
+#artist-img{
+    height: 50vh;
+    width: 20vw;
+    object-fit: cover;
+}
+
+#artist-result{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#artist-result-search {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#album{
+    background-color: rgb(188, 187, 187);
+    width: 20%;
+    margin:1%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+}
+
+#albums-img{
+    height: 50vh;
+    width: 18vw;
+    object-fit: cover;
+}
+
+#albums-result-search {
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#track{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10%;
+}

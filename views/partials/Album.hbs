@@ -1,0 +1,7 @@
+<div id= "album">
+    <img id= "albums-img" src= {{this.images.[0].url}}>
+    <h2>{{this.name}}</h2>
+    <form action= "/album-tracks" method= "GET">
+        <button type="submit" name="album-id" value={{this.id}}>View tracks</button>
+    </form>
+</div>
