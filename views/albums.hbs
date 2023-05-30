@@ -1,0 +1,8 @@
+<h1>Albums for:</h1>
+{{#each albumsFromApi}}
+<img src= {{this.images.[0].url}}>
+<h2>{{this.name}}</h2>
+<form action= "/album-tracks" method= "GET">
+    <button type="submit" name="album-id" value={{this.id}}>View tracks</button>
+</form>
+{{/each}}
